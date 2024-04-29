@@ -22,7 +22,7 @@ ChartJS.register(
     Legend
 );
 
-const MultiLineChart = () => {
+function MultiLineChart() {
     const options = {
         responsive: true,
         plugins: {

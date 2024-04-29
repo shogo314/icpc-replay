@@ -1,15 +1,24 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function Query() {
+function Query() {
   const searchParams = useSearchParams();
   const contest = searchParams.get("contest");
   const team = searchParams.get("team");
   return (
-    <>
-      <div>contest: {contest}</div>
-      <div>team: {team}</div>
-    </>
+    <div>
+      contest: {contest}<br />
+      team: {team}
+    </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense>
+      <Query />
+    </Suspense>
   );
 }

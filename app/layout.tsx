@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "ICPC Replay",
-  description: "",
+  description: "ICPCの順位の変遷を視覚化します。",
 };
 
 export default function RootLayout({

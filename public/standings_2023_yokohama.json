@@ -1,7 +1,8 @@
 {
   "ContestData": {
     "UnitTime": "minute",
-    "Penalty": "00:20"
+    "Penalty": "00:20",
+    "Duration": "5:00"
   },
   "StandingsData": [
     {

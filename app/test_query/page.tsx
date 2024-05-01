@@ -4,7 +4,14 @@
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
-import json_data from "./json_data.json";
+import standings_2023_domestic from "../../public/standings_2023_domestic.json";
+import standings_2023_yokohama from "../../public/standings_2023_yokohama.json"
+
+const json_data = {
+  standings_2023_domestic,
+  standings_2023_yokohama
+}
+
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -27,6 +34,11 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+
+function rank(contest: "standings_2023_domestic" | "standings_2023_yokohama", id: number, time: number): number {
+  return json_data[contest].StandingsData[id].Rank;
+}
+
 function Query() {
   const searchParams = useSearchParams();
   const contest = searchParams.get("contest");
@@ -63,8 +75,12 @@ function Query() {
   };
   const len: number = json_data[contest].StandingsData.length;
   var f: boolean = true;
+  var id: number = -1;
   for (let i = 0; i < len; i++) {
-    if (json_data[contest].StandingsData[i].TeamName == team) f = false;
+    if (json_data[contest].StandingsData[i].TeamName == team) {
+      f = false;
+      id = i;
+    }
   }
   if (f) {
     return (
@@ -90,11 +106,7 @@ function Query() {
   };
   for (let i = 0; i < 10; i++) {
     tmp.labels.push(i);
-    if (i < 5) {
-      tmp.datasets[0].data.push(i * i);
-    } else {
-      tmp.datasets[0].data.push(30 - i);
-    }
+    tmp.datasets[0].data.push(rank(contest, id, i));
   }
   return (
     <div>

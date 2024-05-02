@@ -113,8 +113,7 @@ function Chart(contest: contest_str, team: string, id: number) {
       fill: false,
       backgroundColor: "rgba(75,192,192,0.4)",
       borderColor: "rgba(75,192,192,1)",
-      showline: true,
-      // tension: 0.1,
+      showLine: true,
     }],
   };
   const options = {

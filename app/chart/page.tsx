@@ -41,7 +41,7 @@ const json_data = {
   };
 };
 
-import { Line } from "react-chartjs-2";
+import { Scatter } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -96,7 +96,16 @@ function rank(contest: contest_str, id: number, time: number): number {
 function Chart(contest: contest_str, team: string, id: number) {
   var labels: number[] = [];
   var data: number[] = [];
-  var tmp = {
+  for (let i = 0; i <= json_data[contest].ContestData.Duration; i++) {
+    let r = rank(contest, id, i);
+    if (data.length >= 2 && data[data.length - 1] == r && data[data.length - 2] == r) {
+      labels.pop();
+      data.pop();
+    }
+    labels.push(i);
+    data.push(r);
+  }
+  const tmp = {
     labels,
     datasets: [{
       label: team,
@@ -104,16 +113,17 @@ function Chart(contest: contest_str, team: string, id: number) {
       fill: false,
       backgroundColor: "rgba(75,192,192,0.4)",
       borderColor: "rgba(75,192,192,1)",
-      tension: 0.1,
-    }]
+      showline: true,
+      // tension: 0.1,
+    }],
   };
-  for (let i = 0; i <= json_data[contest].ContestData.Duration; i++) {
-    tmp.labels.push(i);
-    tmp.datasets[0].data.push(rank(contest, id, i));
-  }
   const options = {
     responsive: true,
     scales: {
+      x: {
+        min: 0,
+        max: json_data[contest].ContestData.Duration,
+      },
       y: {
         reverse: true,
       },
@@ -136,7 +146,7 @@ function Chart(contest: contest_str, team: string, id: number) {
       contest: {contest}<br />
       team: {team}<br />
       university: {json_data[contest].StandingsData[id].University}<br />
-      <Line data={tmp} options={options} />
+      <Scatter data={tmp} options={options} />
     </div>
   );
 }

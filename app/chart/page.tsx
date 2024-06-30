@@ -63,6 +63,14 @@ function rank(contest: string, id: number, time: number): number {
 }
 
 function Chart(contest: string, team: string, id: number) {
+  const contest_name: string = (() => {
+    for (let i = 0; i < contest_data.length; i++) {
+      if (contest_data[i].id == contest) {
+        return contest_data[i].name;
+      }
+    }
+    return "";
+  })();
   var labels: number[] = [];
   var data: number[] = [];
   for (let i = 0; i <= json_data[contest].ContestData.Duration; i++) {
@@ -108,7 +116,7 @@ function Chart(contest: string, team: string, id: number) {
   };
   return (
     <div>
-      contest: {contest}<br />
+      contest: {contest_name}<br />
       team: {team}<br />
       university: {json_data[contest].StandingsData[id].University}<br />
       <Scatter data={tmp} options={options} />
@@ -163,13 +171,21 @@ function Query() {
   return Chart(contest, team, id);
 }
 
+function Main() {
+  return (
+    <main>
+      <Suspense>
+        <Query />
+      </Suspense>
+    </main>
+  );
+}
+
 export default function Page() {
   return (
     <>
       <Header />
-      <Suspense>
-        <Query />
-      </Suspense>
+      <Main />
       <Footer />
     </>
   );

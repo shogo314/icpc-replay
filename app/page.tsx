@@ -4,7 +4,7 @@
 import Header from "./header"
 import Footer from "./footer";
 
-export default function Home() {
+function Main() {
   const getText = () => {
     let contest_input = document.getElementById("contest_input") as HTMLInputElement | null;
     let team_input = document.getElementById("team_input") as HTMLInputElement | null;
@@ -13,13 +13,21 @@ export default function Home() {
     window.location.href = "/chart?contest=" + contest_input.value + "&team=" + team_input.value;
   };
   return (
-    <>
-      <Header />
+    <main>
       <div>
         contest: <input type="text" id="contest_input" defaultValue="2023_domestic" />&quot;2023_domestic&quot; | &quot;2023_yokohama&quot; | &quot;2023_asia&quot;<br />
         team: <input type="text" id="team_input" defaultValue="KSS908111314" /><br />
         <button onClick={getText}>グラフを表示</button>
       </div>
+    </main>
+  );
+}
+
+export default function Page() {
+  return (
+    <>
+      <Header />
+      <Main />
       <Footer />
     </>
   );

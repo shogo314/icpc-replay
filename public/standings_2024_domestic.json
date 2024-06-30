@@ -1,0 +1,19 @@
+{
+    "ContestData": {
+        "UnitTime": "second",
+        "Penalty": 1200,
+        "Duration": 10800,
+        "TaskInfo": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I"
+        ]
+    },
+    "StandingsData": []
+}

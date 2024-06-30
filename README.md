@@ -9,3 +9,14 @@
 
 htmlからjsonにするために書いたやつ
 [icpc_standings](https://github.com/shogo314/icpc_standings)
+
+## 開発者向けメモ
+Next.jsで書いたものをVercel上のサーバーでデプロイしています。
+
+### 環境
+npmとかいろいろ入れてます。
+
+### 手元での実行
+```bash
+npm run dev
+```

@@ -5,6 +5,8 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
 import { contest_data, json_data } from "../standings_data";
+import Header from "../header";
+import Footer from "../footer";
 
 import { Scatter } from "react-chartjs-2";
 import {
@@ -106,9 +108,6 @@ function Chart(contest: string, team: string, id: number) {
   };
   return (
     <div>
-      <a href="/">
-        Home
-      </a><br />
       contest: {contest}<br />
       team: {team}<br />
       university: {json_data[contest].StandingsData[id].University}<br />
@@ -124,7 +123,6 @@ function Query() {
   if (contest == null || team == null) {
     return (
       <div>
-        <a href="/">Home</a><br />
         contest: {contest}<br />
         team: {team}
       </div>
@@ -140,9 +138,6 @@ function Query() {
   })()) {
     return (
       <div>
-        <a href="/">
-          Home
-        </a><br />
         contest: {contest}<br />
         No such contest exists.
       </div>
@@ -159,9 +154,6 @@ function Query() {
   if (id == -1) {
     return (
       <div>
-        <a href="/">
-          Home
-        </a><br />
         contest: {contest}<br />
         team: {team}<br />
         No such team exists.
@@ -173,8 +165,12 @@ function Query() {
 
 export default function Page() {
   return (
-    <Suspense>
-      <Query />
-    </Suspense>
+    <>
+      <Header />
+      <Suspense>
+        <Query />
+      </Suspense>
+      <Footer />
+    </>
   );
 }

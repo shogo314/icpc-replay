@@ -2,7 +2,7 @@
     "ContestData": {
         "UnitTime": "second",
         "Penalty": 1200,
-        "Duration": 18000,
+        "Duration": 10800,
         "TaskInfo": [
             "A",
             "B",

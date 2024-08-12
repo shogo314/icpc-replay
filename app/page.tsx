@@ -15,7 +15,7 @@ function Main() {
   return (
     <main>
       <div>
-        contest: <input type="text" id="contest_input" defaultValue="2024_domestic" />&quot;2024_domestic&quot; | &quot;2023_domestic&quot; | &quot;2023_yokohama&quot; | &quot;2023_asia&quot;<br />
+        contest: <input type="text" id="contest_input" defaultValue="2024_domestic" />&quot;2024_domestic&quot; | &quot;2023_domestic&quot; | &quot;2023_yokohama&quot; | &quot;2023_asia&quot; | &quot;2022_yokohama&quot;<br />
         team: <input type="text" id="team_input" defaultValue="kotamanegi_marukajiri" /><br />
         <button onClick={getText}>グラフを表示</button>
       </div>

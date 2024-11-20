@@ -20,7 +20,7 @@ function Main() {
   return (
     <main>
       <div>
-        contest: <input type="text" id="contest_input" defaultValue="2024_domestic" />{contest_list.join(" | ")}<br />
+        contest: <input type="text" id="contest_input" defaultValue="2024_taichung" />{contest_list.join(" | ")}<br />
         team: <input type="text" id="team_input" defaultValue="kotamanegi_marukajiri" /><br />
         <button onClick={getText}>グラフを表示</button>
       </div>

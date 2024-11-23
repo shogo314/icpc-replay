@@ -1,0 +1,3037 @@
+{
+    "ContestData": {
+        "UnitTime": "minute",
+        "Penalty": 20,
+        "Duration": 300,
+        "TaskInfo": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L"
+        ]
+    },
+    "StandingsData": [
+        {
+            "Rank": 1,
+            "TotalResult": {
+                "Score": 10,
+                "Penalty": 1471
+            },
+            "TeamName": "Penguins",
+            "University": "KAIST",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 86,
+                    "Penalty": 0
+                },
+                "C": {
+                    "Score": 1,
+                    "Elapsed": 222,
+                    "Penalty": 4
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 19,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 1,
+                    "Elapsed": 127,
+                    "Penalty": 2
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 71,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 29,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 67,
+                    "Penalty": 3
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 26,
+                    "Penalty": 1
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 157,
+                    "Penalty": 3
+                },
+                "K": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 2
+                },
+                "L": {
+                    "Score": 1,
+                    "Elapsed": 287,
+                    "Penalty": 5
+                }
+            }
+        },
+        {
+            "Rank": 2,
+            "TotalResult": {
+                "Score": 9,
+                "Penalty": 968
+            },
+            "TeamName": "std_abs",
+            "University": "National Taiwan University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 92,
+                    "Penalty": 0
+                },
+                "C": {
+                    "Score": 1,
+                    "Elapsed": 269,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 29,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 9
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 112,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 54,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 75,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 31,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 37,
+                    "Penalty": 0
+                },
+                "L": {
+                    "Score": 1,
+                    "Elapsed": 209,
+                    "Penalty": 2
+                }
+            }
+        },
+        {
+            "Rank": 3,
+            "TotalResult": {
+                "Score": 9,
+                "Penalty": 1146
+            },
+            "TeamName": "NewTrend",
+            "University": "Seoul National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 109,
+                    "Penalty": 0
+                },
+                "C": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 8
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 12,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 1,
+                    "Elapsed": 179,
+                    "Penalty": 1
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 71,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 41,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 116,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 18,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 130,
+                    "Penalty": 1
+                },
+                "L": {
+                    "Score": 1,
+                    "Elapsed": 290,
+                    "Penalty": 5
+                }
+            }
+        },
+        {
+            "Rank": 4,
+            "TotalResult": {
+                "Score": 9,
+                "Penalty": 1382
+            },
+            "TeamName": "MunSongSong Eggdrop",
+            "University": "KAIST",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 190,
+                    "Penalty": 0
+                },
+                "C": {
+                    "Score": 1,
+                    "Elapsed": 283,
+                    "Penalty": 7
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 23,
+                    "Penalty": 1
+                },
+                "E": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 147,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 45,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 68,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 24,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 176,
+                    "Penalty": 2
+                },
+                "K": {
+                    "Score": 1,
+                    "Elapsed": 226,
+                    "Penalty": 0
+                },
+                "L": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 5,
+            "TotalResult": {
+                "Score": 8,
+                "Penalty": 877
+            },
+            "TeamName": "PS akgwi",
+            "University": "Soongsil University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 157,
+                    "Penalty": 0
+                },
+                "C": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 4
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 25,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 9
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 110,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 40,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 76,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 18,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 159,
+                    "Penalty": 3
+                },
+                "L": {
+                    "Score": 1,
+                    "Elapsed": 212,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 6,
+            "TotalResult": {
+                "Score": 8,
+                "Penalty": 1074
+            },
+            "TeamName": "Final Round",
+            "University": "KAIST",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 109,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 7,
+                    "Penalty": 1
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 194,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 28,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 94,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 36,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 226,
+                    "Penalty": 2
+                },
+                "K": {
+                    "Score": 1,
+                    "Elapsed": 280,
+                    "Penalty": 1
+                },
+                "L": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 3
+                }
+            }
+        },
+        {
+            "Rank": 7,
+            "TotalResult": {
+                "Score": 7,
+                "Penalty": 820
+            },
+            "TeamName": "Cafe Garage",
+            "University": "Seoul National University",
+            "TaskResults": {
+                "A": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 3
+                },
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 153,
+                    "Penalty": 0
+                },
+                "C": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 3
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 100,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 91,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 44,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 71,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 33,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 16
+                },
+                "K": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 5
+                },
+                "L": {
+                    "Score": 1,
+                    "Elapsed": 268,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 8,
+            "TotalResult": {
+                "Score": 7,
+                "Penalty": 823
+            },
+            "TeamName": "Minors",
+            "University": "Seoul National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 105,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 51,
+                    "Penalty": 2
+                },
+                "E": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 4
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 200,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 78,
+                    "Penalty": 2
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 101,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 7,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 161,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 9,
+            "TotalResult": {
+                "Score": 7,
+                "Penalty": 844
+            },
+            "TeamName": "CodeMaestro",
+            "University": "Seoul National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 93,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 18,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 182,
+                    "Penalty": 2
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 56,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 127,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 23,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 225,
+                    "Penalty": 2
+                }
+            }
+        },
+        {
+            "Rank": 10,
+            "TotalResult": {
+                "Score": 7,
+                "Penalty": 844
+            },
+            "TeamName": "Potom",
+            "University": "Ulsan National Institute of Science and Technology",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 71,
+                    "Penalty": 0
+                },
+                "C": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 8
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 28,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 1,
+                    "Elapsed": 57,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 7
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 108,
+                    "Penalty": 3
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 157,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 52,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 291,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 11,
+            "TotalResult": {
+                "Score": 7,
+                "Penalty": 884
+            },
+            "TeamName": "AllSolvedin1557",
+            "University": "Pohang University of Science and Technology",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 102,
+                    "Penalty": 0
+                },
+                "C": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 3
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 16,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 180,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 49,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 272,
+                    "Penalty": 2
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 27,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 178,
+                    "Penalty": 0
+                },
+                "L": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 12,
+            "TotalResult": {
+                "Score": 7,
+                "Penalty": 897
+            },
+            "TeamName": "ThereIsNoTeam",
+            "University": "Seoul National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 93,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 14,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 178,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 52,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 190,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 33,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 297,
+                    "Penalty": 2
+                }
+            }
+        },
+        {
+            "Rank": 13,
+            "TotalResult": {
+                "Score": 7,
+                "Penalty": 898
+            },
+            "TeamName": "OReO",
+            "University": "Hanyang University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 132,
+                    "Penalty": 1
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 13,
+                    "Penalty": 1
+                },
+                "E": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 4
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 175,
+                    "Penalty": 3
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 44,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 190,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 27,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 137,
+                    "Penalty": 4
+                },
+                "L": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 2
+                }
+            }
+        },
+        {
+            "Rank": 14,
+            "TotalResult": {
+                "Score": 7,
+                "Penalty": 933
+            },
+            "TeamName": "NoPractice",
+            "University": "Seoul National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 177,
+                    "Penalty": 1
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 46,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 1,
+                    "Elapsed": 174,
+                    "Penalty": 2
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 221,
+                    "Penalty": 2
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 43,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 120,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 32,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 6
+                },
+                "L": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 15,
+            "TotalResult": {
+                "Score": 7,
+                "Penalty": 1010
+            },
+            "TeamName": "CoutHelloWorld",
+            "University": "Seoul National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 159,
+                    "Penalty": 0
+                },
+                "C": {
+                    "Score": 1,
+                    "Elapsed": 253,
+                    "Penalty": 1
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 28,
+                    "Penalty": 3
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 188,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 91,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 93,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 58,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 5
+                }
+            }
+        },
+        {
+            "Rank": 16,
+            "TotalResult": {
+                "Score": 7,
+                "Penalty": 1021
+            },
+            "TeamName": "Kim and Jang",
+            "University": "KAIST",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 120,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 31,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 176,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 103,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 132,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 28,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 271,
+                    "Penalty": 7
+                }
+            }
+        },
+        {
+            "Rank": 17,
+            "TotalResult": {
+                "Score": 7,
+                "Penalty": 1068
+            },
+            "TeamName": "IOS",
+            "University": "KAIST",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 148,
+                    "Penalty": 0
+                },
+                "C": {
+                    "Score": 1,
+                    "Elapsed": 207,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 74,
+                    "Penalty": 4
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 125,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 104,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 234,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 56,
+                    "Penalty": 0
+                },
+                "K": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 3
+                }
+            }
+        },
+        {
+            "Rank": 18,
+            "TotalResult": {
+                "Score": 7,
+                "Penalty": 1394
+            },
+            "TeamName": "SIGSEGV",
+            "University": "Korea University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 294,
+                    "Penalty": 2
+                },
+                "C": {
+                    "Score": 1,
+                    "Elapsed": 82,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 18,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 273,
+                    "Penalty": 2
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 217,
+                    "Penalty": 3
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 281,
+                    "Penalty": 3
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 29,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 19,
+            "TotalResult": {
+                "Score": 6,
+                "Penalty": 576
+            },
+            "TeamName": "Redshift",
+            "University": "Sogang University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 59,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 14,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 41,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 133,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 33,
+                    "Penalty": 1
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 236,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 20,
+            "TotalResult": {
+                "Score": 6,
+                "Penalty": 598
+            },
+            "TeamName": "CodeBorat",
+            "University": "Pusan National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 195,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 30,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 93,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 64,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 160,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 36,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 21,
+            "TotalResult": {
+                "Score": 6,
+                "Penalty": 685
+            },
+            "TeamName": "Seyeon",
+            "University": "Seoul National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 199,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 54,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 121,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 59,
+                    "Penalty": 2
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 156,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 36,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 22,
+            "TotalResult": {
+                "Score": 6,
+                "Penalty": 762
+            },
+            "TeamName": "Firefox Burned My Computer",
+            "University": "KAIST",
+            "TaskResults": {
+                "A": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 183,
+                    "Penalty": 0
+                },
+                "C": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 15,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 6
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 79,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 148,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 26,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 251,
+                    "Penalty": 1
+                },
+                "K": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 23,
+            "TotalResult": {
+                "Score": 6,
+                "Penalty": 770
+            },
+            "TeamName": "Gamza Bat T",
+            "University": "Kangwon National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 112,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 16,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 298,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 46,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 232,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 26,
+                    "Penalty": 0
+                },
+                "K": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 24,
+            "TotalResult": {
+                "Score": 6,
+                "Penalty": 829
+            },
+            "TeamName": "Hobanwoo",
+            "University": "Kyungpook National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 82,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 19,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 3
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 57,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 158,
+                    "Penalty": 2
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 38,
+                    "Penalty": 2
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 295,
+                    "Penalty": 5
+                }
+            }
+        },
+        {
+            "Rank": 25,
+            "TotalResult": {
+                "Score": 6,
+                "Penalty": 834
+            },
+            "TeamName": "happihappi",
+            "University": "Soongsil University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 179,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 17,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 51,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 234,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 36,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 217,
+                    "Penalty": 4
+                }
+            }
+        },
+        {
+            "Rank": 26,
+            "TotalResult": {
+                "Score": 5,
+                "Penalty": 314
+            },
+            "TeamName": "cookie",
+            "University": "Yonsei University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 127,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 40,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 3
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 42,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 82,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 23,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 27,
+            "TotalResult": {
+                "Score": 5,
+                "Penalty": 366
+            },
+            "TeamName": "SCC_SinChonCoders",
+            "University": "Yonsei University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 104,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 25,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 54,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 155,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 28,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 4
+                }
+            }
+        },
+        {
+            "Rank": 28,
+            "TotalResult": {
+                "Score": 5,
+                "Penalty": 477
+            },
+            "TeamName": "SSM_Trio",
+            "University": "Korea University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 200,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 25,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 73,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 143,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 36,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 29,
+            "TotalResult": {
+                "Score": 5,
+                "Penalty": 523
+            },
+            "TeamName": "Raa FanClub",
+            "University": "Sogang University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 101,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 48,
+                    "Penalty": 1
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 7
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 62,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 18,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 214,
+                    "Penalty": 3
+                }
+            }
+        },
+        {
+            "Rank": 30,
+            "TotalResult": {
+                "Score": 5,
+                "Penalty": 544
+            },
+            "TeamName": "Arete",
+            "University": "Ulsan National Institute of Science and Technology",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 208,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 20,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 65,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 111,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 80,
+                    "Penalty": 2
+                }
+            }
+        },
+        {
+            "Rank": 31,
+            "TotalResult": {
+                "Score": 5,
+                "Penalty": 580
+            },
+            "TeamName": "2 3 5 8 14",
+            "University": "Jeonbuk National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 146,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 19,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 1,
+                    "Elapsed": 233,
+                    "Penalty": 5
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 54,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 28,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 6
+                }
+            }
+        },
+        {
+            "Rank": 32,
+            "TotalResult": {
+                "Score": 5,
+                "Penalty": 622
+            },
+            "TeamName": "Catastrohpe",
+            "University": "Hanyang University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 122,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 61,
+                    "Penalty": 5
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 52,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 217,
+                    "Penalty": 2
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 30,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 2
+                }
+            }
+        },
+        {
+            "Rank": 33,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 251
+            },
+            "TeamName": "Ilgam Rangers",
+            "University": "Konkuk University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 128,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 16,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 61,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 26,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 34,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 283
+            },
+            "TeamName": "Kimchi_Fridge",
+            "University": "Ajou University",
+            "TaskResults": {
+                "A": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 144,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 34,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 56,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 9
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 29,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 35,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 290
+            },
+            "TeamName": "panmaewanryo",
+            "University": "Hanyang University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 154,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 27,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 77,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 4
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 32,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 36,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 312
+            },
+            "TeamName": "SSS",
+            "University": "KAIST",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 174,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 20,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 9
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 5
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 62,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 36,
+                    "Penalty": 1
+                },
+                "J": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 5
+                }
+            }
+        },
+        {
+            "Rank": 37,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 375
+            },
+            "TeamName": "Default",
+            "University": "Sejong University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 212,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 28,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 74,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 11
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 41,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 38,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 377
+            },
+            "TeamName": "MidaL",
+            "University": "Daegu Gyungbook Institute of Science and Technology",
+            "TaskResults": {
+                "A": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 191,
+                    "Penalty": 0
+                },
+                "C": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 26,
+                    "Penalty": 0
+                },
+                "E": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 90,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 70,
+                    "Penalty": 0
+                },
+                "J": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "K": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "L": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 39,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 379
+            },
+            "TeamName": "TLE_ttak",
+            "University": "Yonsei University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 232,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 19,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 57,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 51,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 40,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 411
+            },
+            "TeamName": "avg00",
+            "University": "SungKyunKwan University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 192,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 47,
+                    "Penalty": 2
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 71,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 41,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 41,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 423
+            },
+            "TeamName": "Mad3Garlic",
+            "University": "Korea University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 190,
+                    "Penalty": 2
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 28,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 5
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 74,
+                    "Penalty": 3
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 31,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 42,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 424
+            },
+            "TeamName": "Hi-Talk",
+            "University": "Inha University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 228,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 49,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 69,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 3
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 38,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 43,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 476
+            },
+            "TeamName": "I_hate_Rudin",
+            "University": "Korea University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 264,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 42,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 86,
+                    "Penalty": 2
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 44,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 44,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 486
+            },
+            "TeamName": "BalloonBreaker",
+            "University": "Pohang University of Science and Technology",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 192,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 22,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 126,
+                    "Penalty": 6
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 2
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 26,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 45,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 494
+            },
+            "TeamName": "Gungongyi",
+            "University": "University of Seoul",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 233,
+                    "Penalty": 1
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 64,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 83,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 74,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 46,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 510
+            },
+            "TeamName": "HwangEumCho",
+            "University": "Yonsei University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 157,
+                    "Penalty": 1
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 52,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 67,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 174,
+                    "Penalty": 2
+                }
+            }
+        },
+        {
+            "Rank": 47,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 512
+            },
+            "TeamName": "INPISA",
+            "University": "Inha University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 227,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 37,
+                    "Penalty": 2
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 75,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 18
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 113,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 48,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 538
+            },
+            "TeamName": "wookje.dance",
+            "University": "Soongsil University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 175,
+                    "Penalty": 1
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 58,
+                    "Penalty": 3
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 6
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 80,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 7
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 105,
+                    "Penalty": 2
+                }
+            }
+        },
+        {
+            "Rank": 49,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 553
+            },
+            "TeamName": "DROP DATABASE;",
+            "University": "Gwangju Institute of Science and Technology",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 224,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 52,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 190,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 67,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 50,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 560
+            },
+            "TeamName": "Coke is Pepsi",
+            "University": "KAIST",
+            "TaskResults": {
+                "B": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 2
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 46,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 68,
+                    "Penalty": 1
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 2
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 37,
+                    "Penalty": 1
+                },
+                "J": {
+                    "Score": 1,
+                    "Elapsed": 269,
+                    "Penalty": 5
+                }
+            }
+        },
+        {
+            "Rank": 51,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 667
+            },
+            "TeamName": "Mid Yuumi",
+            "University": "Kookmin University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 27,
+                    "Penalty": 0
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 158,
+                    "Penalty": 4
+                },
+                "H": {
+                    "Score": 1,
+                    "Elapsed": 243,
+                    "Penalty": 3
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 79,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 52,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 729
+            },
+            "TeamName": "Butter Tangerine",
+            "University": "Jeju National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 74,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 279,
+                    "Penalty": 4
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 164,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 112,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 53,
+            "TotalResult": {
+                "Score": 4,
+                "Penalty": 769
+            },
+            "TeamName": "KookBab",
+            "University": "Kookmin University",
+            "TaskResults": {
+                "B": {
+                    "Score": 1,
+                    "Elapsed": 228,
+                    "Penalty": 0
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 126,
+                    "Penalty": 9
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 8
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 154,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 61,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 54,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 205
+            },
+            "TeamName": "JinAmTheDPKiller",
+            "University": "Dong-A University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 72,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 90,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 43,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 55,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 216
+            },
+            "TeamName": "Team PS Tactics",
+            "University": "Incheon National University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 29,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 66,
+                    "Penalty": 2
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 3
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 81,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 56,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 265
+            },
+            "TeamName": "ANA",
+            "University": "Chungnam National University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 62,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 76,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 2
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 107,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 57,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 280
+            },
+            "TeamName": "0char0hcar",
+            "University": "Hanyang University ERICA Campus",
+            "TaskResults": {
+                "B": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 55,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 75,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 110,
+                    "Penalty": 2
+                }
+            }
+        },
+        {
+            "Rank": 58,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 313
+            },
+            "TeamName": "WooJeans",
+            "University": "Sogang University",
+            "TaskResults": {
+                "B": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 37,
+                    "Penalty": 2
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 126,
+                    "Penalty": 2
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 2
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 70,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 59,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 327
+            },
+            "TeamName": "Compiler Kings",
+            "University": "Hanyang University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 75,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 127,
+                    "Penalty": 2
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 85,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 60,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 329
+            },
+            "TeamName": "1q2w3e4r!",
+            "University": "Pusan National University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 87,
+                    "Penalty": 3
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 124,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 4
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 58,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 61,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 333
+            },
+            "TeamName": "Saenaegi",
+            "University": "Konkuk University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 33,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 158,
+                    "Penalty": 5
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 42,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 62,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 336
+            },
+            "TeamName": "JustDoIt",
+            "University": "Pusan National University",
+            "TaskResults": {
+                "B": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 2
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 68,
+                    "Penalty": 4
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 93,
+                    "Penalty": 0
+                },
+                "H": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 3
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 75,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 63,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 386
+            },
+            "TeamName": "gildayhee",
+            "University": "Sookmyung Women's University",
+            "TaskResults": {
+                "B": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 1
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 47,
+                    "Penalty": 1
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 168,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 131,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 64,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 580
+            },
+            "TeamName": "GomSang",
+            "University": "Dankook University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 138,
+                    "Penalty": 7
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 154,
+                    "Penalty": 2
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 108,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 65,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 609
+            },
+            "TeamName": "Last Register",
+            "University": "Hongik University",
+            "TaskResults": {
+                "B": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 2
+                },
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 30,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 254,
+                    "Penalty": 4
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 165,
+                    "Penalty": 4
+                }
+            }
+        },
+        {
+            "Rank": 66,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 615
+            },
+            "TeamName": "Con Energia",
+            "University": "Pohang University of Science and Technology",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 214,
+                    "Penalty": 6
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 227,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 34,
+                    "Penalty": 1
+                }
+            }
+        },
+        {
+            "Rank": 67,
+            "TotalResult": {
+                "Score": 3,
+                "Penalty": 899
+            },
+            "TeamName": "cbnuSW1",
+            "University": "Chungbuk National University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 211,
+                    "Penalty": 4
+                },
+                "G": {
+                    "Score": 1,
+                    "Elapsed": 275,
+                    "Penalty": 2
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 213,
+                    "Penalty": 4
+                }
+            }
+        },
+        {
+            "Rank": 68,
+            "TotalResult": {
+                "Score": 2,
+                "Penalty": 102
+            },
+            "TeamName": "None Playable",
+            "University": "SungKyunKwan University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 48,
+                    "Penalty": 0
+                },
+                "G": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 11
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 54,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 69,
+            "TotalResult": {
+                "Score": 2,
+                "Penalty": 295
+            },
+            "TeamName": "Memoria",
+            "University": "Chungbuk National University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 110,
+                    "Penalty": 0
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 185,
+                    "Penalty": 0
+                }
+            }
+        },
+        {
+            "Rank": 70,
+            "TotalResult": {
+                "Score": 2,
+                "Penalty": 368
+            },
+            "TeamName": "ScratchMaster",
+            "University": "Kookmin University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 108,
+                    "Penalty": 4
+                },
+                "G": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 5
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 140,
+                    "Penalty": 2
+                }
+            }
+        },
+        {
+            "Rank": 71,
+            "TotalResult": {
+                "Score": 2,
+                "Penalty": 379
+            },
+            "TeamName": "New_Golds",
+            "University": "Sahmyook University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 73,
+                    "Penalty": 5
+                },
+                "I": {
+                    "Score": 1,
+                    "Elapsed": 166,
+                    "Penalty": 2
+                }
+            }
+        },
+        {
+            "Rank": 72,
+            "TotalResult": {
+                "Score": 1,
+                "Penalty": 177
+            },
+            "TeamName": "Victory Choi",
+            "University": "Hongik University",
+            "TaskResults": {
+                "D": {
+                    "Score": 1,
+                    "Elapsed": 137,
+                    "Penalty": 2
+                },
+                "F": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 3
+                },
+                "G": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 2
+                }
+            }
+        },
+        {
+            "Rank": 73,
+            "TotalResult": {
+                "Score": 0,
+                "Penalty": 0
+            },
+            "TeamName": "JAEHWAL",
+            "University": "Chonnam National University",
+            "TaskResults": {
+                "D": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 9
+                },
+                "G": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 2
+                },
+                "I": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 3
+                }
+            }
+        },
+        {
+            "Rank": 73,
+            "TotalResult": {
+                "Score": 0,
+                "Penalty": 0
+            },
+            "TeamName": "Onlyou",
+            "University": "Handong Global University",
+            "TaskResults": {
+                "G": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 6
+                },
+                "I": {
+                    "Score": 0,
+                    "Elapsed": 0,
+                    "Penalty": 6
+                }
+            }
+        }
+    ]
+}

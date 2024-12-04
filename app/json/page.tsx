@@ -8,7 +8,7 @@ export default function Home() {
           (function () {
             const list = [];
             for (let i = 0; i < contest_data.length; i++) {
-              list.push(<li><a href={"/standings_" + contest_data[i].id + ".json"}>{contest_data[i].name}</a></li>);
+              list.push(<li><a href={"/json/standings_" + contest_data[i].id + ".json"}>{contest_data[i].name}</a></li>);
             }
             return <ul>{list}</ul>;
           }())

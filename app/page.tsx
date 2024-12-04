@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { contest_data, json_data } from "./standings_data";
 import Header from "./header";
 import Footer from "./footer";
+import Link from 'next/link'
 
 function Main() {
   const [selectedContest, setSelectedContest] = useState(contest_data[0].id); // 初期値は最初のコンテスト
@@ -60,6 +61,11 @@ function Main() {
         <br />
         <button onClick={handleButtonClick}>グラフを表示</button>
       </div>
+      <h2>
+        <Link href="/json">
+          json data
+        </Link>
+      </h2>
     </main>
   );
 }

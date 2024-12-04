@@ -18,7 +18,6 @@ import {
   Title,
   Tooltip,
   Legend,
-  scales,
 } from "chart.js";
 
 ChartJS.register(
@@ -28,19 +27,23 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 );
 
-function rank(contest: string, id: number, time: number): number {
+function rank_and_solved(contest: string, id: number, time: number): [number, string[]] {
   var score: number = 0;
   var penalty: number = 0;
   var cnt = 0;
+  var solved: string[] = [];
   for (const p in json_data[contest].StandingsData[id].TaskResults) {
     let task: any = json_data[contest].StandingsData[id].TaskResults[p];
     if (task.Score > 0 && task.Elapsed <= time) {
       score += task.Score;
       penalty += task.Elapsed;
       penalty += task.Penalty * json_data[contest].ContestData.Penalty;
+      if (task.Elapsed == time) {
+        solved.push(p);
+      }
     }
   }
   for (let i = 0; i < json_data[contest].StandingsData.length; i++) {
@@ -59,7 +62,7 @@ function rank(contest: string, id: number, time: number): number {
       cnt++;
     }
   }
-  return cnt + 1;
+  return [cnt + 1, solved];
 }
 
 function Chart(contest: string, team: string, id: number) {
@@ -74,7 +77,7 @@ function Chart(contest: string, team: string, id: number) {
   var labels: number[] = [];
   var data: number[] = [];
   for (let i = 0; i <= json_data[contest].ContestData.Duration; i++) {
-    let r = rank(contest, id, i);
+    let [r, solved] = rank_and_solved(contest, id, i);
     if (data.length >= 2 && data[data.length - 1] == r && data[data.length - 2] == r) {
       labels.pop();
       data.pop();
@@ -99,18 +102,21 @@ function Chart(contest: string, team: string, id: number) {
       x: {
         min: 0,
         max: json_data[contest].ContestData.Duration,
+        title: {
+          display: true,
+          text: "time (" + json_data[contest].ContestData.UnitTime + ")",
+        },
       },
       y: {
         reverse: true,
+        title: {
+          display: true,
+          text: "rank",
+        },
       },
     },
     plugins: {
       legend: {},
-      title: {
-        display: false,
-        text: "グラフタイトル",
-      },
-      labels: {},
       tooltip: {},
     },
   };

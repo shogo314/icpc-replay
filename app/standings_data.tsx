@@ -53,7 +53,8 @@ export const json_data = {
             TeamName: string;
             University: string;
             TaskResults: {
-                // [key: string]: { なぜかエラーになる
+                // なぜかエラーになる
+                // [key: string]: {
                 //   Elapsed: number;
                 //   Score: number;
                 //   Penalty: number;

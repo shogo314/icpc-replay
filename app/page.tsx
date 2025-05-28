@@ -30,7 +30,9 @@ function Main() {
   };
 
   const handleButtonClick = () => {
-    window.location.href = `/chart?contest=${selectedContest}&team=${selectedTeam}`;
+    const encodedContest = encodeURIComponent(selectedContest);
+    const encodedTeam = encodeURIComponent(selectedTeam);
+    window.location.href = `/chart?contest=${encodedContest}&team=${encodedTeam}`;
   };
 
   return (

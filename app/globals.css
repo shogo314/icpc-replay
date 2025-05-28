@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1. 基本のリセットとフォント調整 */
+body {
+  @apply bg-gray-50 text-gray-900 antialiased leading-relaxed;
+}
+
+/* 2. リンクスタイル */
+a {
+  @apply text-blue-600 hover:underline transition-colors duration-200;
+}
+
+/* 3. ボタンのベーススタイル（任意） */
+button {
+  @apply rounded px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 transition;
+}
+
+/* 4. ヘッダー/タイトルに使えるカスタムクラス（任意） */
+.heading {
+  @apply text-2xl font-semibold mb-4 text-gray-800;
+}

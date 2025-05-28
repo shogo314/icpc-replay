@@ -17,6 +17,7 @@ import {
   LineElement,
   Title,
   Tooltip,
+  TooltipItem,
   Legend,
 } from "chart.js";
 
@@ -74,28 +75,50 @@ function Chart(contest: string, team: string, id: number) {
     }
     return "";
   })();
-  var labels: number[] = [];
-  var data: number[] = [];
+
+  const labels: number[] = [];
+  const ranks: number[] = [];
+  const backgroundColors: string[] = [];
+  const pointSizes: number[] = [];
+
   for (let i = 0; i <= json_data[contest].ContestData.Duration; i++) {
     let [r, solved] = rank_and_solved(contest, id, i);
-    if (data.length >= 2 && data[data.length - 1] == r && data[data.length - 2] == r) {
+
+    if (ranks.length >= 2 && ranks[ranks.length - 1] == r && ranks[ranks.length - 2] == r) {
       labels.pop();
-      data.pop();
+      ranks.pop();
+      backgroundColors.pop();
+      pointSizes.pop();
     }
+
+    // ラベルとデータ追加
     labels.push(i);
-    data.push(r);
+    ranks.push(r);
+
+    // 解いたところは色とサイズを変える
+    if (solved.length > 0) {
+      backgroundColors.push("rgba(0, 200, 0, 0.8)");  // 濃い緑
+      pointSizes.push(10);                            // 大きめのマーカー
+    } else {
+      backgroundColors.push("rgba(75,192,192,0.4)"); // 通常の色
+      pointSizes.push(5);                             // 通常のサイズ
+    }
   }
-  const tmp = {
+
+  const data = {
     labels,
     datasets: [{
       label: team,
-      data,
+      data: ranks,
       fill: false,
-      backgroundColor: "rgba(75,192,192,0.4)",
+      backgroundColor: backgroundColors,
       borderColor: "rgba(75,192,192,1)",
       showLine: true,
+      pointRadius: pointSizes,
+      pointHoverRadius: pointSizes.map(s => s + 3), // ホバー時は少し大きく
     }],
   };
+
   const options = {
     responsive: true,
     scales: {
@@ -117,15 +140,33 @@ function Chart(contest: string, team: string, id: number) {
     },
     plugins: {
       legend: {},
-      tooltip: {},
+      tooltip: {
+        callbacks: {
+          title: function (context: any) {
+            const time = context[0]?.parsed.x;
+            return `Time: ${time} (${json_data[contest].ContestData.UnitTime})`;
+          },
+          label: function (context: any) {
+            const time = context.parsed.x;
+            const teamLabel = context.dataset.label;
+            const teamId = json_data[contest].StandingsData.findIndex((t: any) => t.TeamName === teamLabel);
+            if (teamId === -1) return `Rank: ${context.parsed.y}`;
+
+            const [, solved] = rank_and_solved(contest, teamId, time);
+            const solvedStr = solved.length > 0 ? `Solved: ${solved.join(", ")}` : "No problems solved at this time";
+            return `Rank: ${context.parsed.y}, ${solvedStr}`;
+          },
+        },
+      },
     },
   };
+
   return (
     <div>
       contest: {contest_name}<br />
       team: {team}<br />
       university: {json_data[contest].StandingsData[id].University}<br />
-      <Scatter data={tmp} options={options} />
+      <Scatter data={data} options={options} />
     </div>
   );
 }
@@ -136,44 +177,34 @@ function Query() {
   const team = searchParams.get("team");
   if (contest == null || team == null) {
     return (
-      <div>
-        contest: {contest}<br />
-        team: {team}
+      <div className="p-4 text-red-700">
+        <p>Missing query parameters:</p>
+        <p>Contest: {contest ?? "(not specified)"}</p>
+        <p>Team: {team ?? "(not specified)"}</p>
       </div>
     );
   }
-  if ((() => {
-    for (let i = 0; i < contest_data.length; i++) {
-      if (contest_data[i].id == contest) {
-        return false;
-      }
-    }
-    return true;
-  })()) {
+
+  if (!contest_data.some(c => c.id === contest)) {
     return (
-      <div>
-        contest: {contest}<br />
-        No such contest exists.
+      <div className="p-4 text-red-700">
+        <p>Contest: {contest}</p>
+        <p>No such contest found.</p>
       </div>
     );
   }
-  const len: number = json_data[contest].StandingsData.length;
-  var id: number = -1;
-  for (let i = 0; i < len; i++) {
-    if (json_data[contest].StandingsData[i].TeamName == team) {
-      id = i;
-      break;
-    }
-  }
-  if (id == -1) {
+
+  const id = json_data[contest].StandingsData.findIndex(t => t.TeamName === team);
+  if (id === -1) {
     return (
-      <div>
-        contest: {contest}<br />
-        team: {team}<br />
-        No such team exists.
+      <div className="p-4 text-red-700">
+        <p>Contest: {contest}</p>
+        <p>Team: {team}</p>
+        <p>No such team found.</p>
       </div>
     );
   }
+
   return Chart(contest, team, id);
 }
 

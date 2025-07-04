@@ -81,15 +81,19 @@ function Chart(contest: string, team: string, id: number) {
   const backgroundColors: string[] = [];
   const pointSizes: number[] = [];
 
+  let presolved = false;
+
   for (let i = 0; i <= json_data[contest].ContestData.Duration; i++) {
     let [r, solved] = rank_and_solved(contest, id, i);
 
-    if (ranks.length >= 2 && ranks[ranks.length - 1] == r && ranks[ranks.length - 2] == r) {
+    if (ranks.length >= 2 && ranks[ranks.length - 1] == r && ranks[ranks.length - 2] == r && !presolved) {
       labels.pop();
       ranks.pop();
       backgroundColors.pop();
       pointSizes.pop();
     }
+
+    presolved = solved.length > 0;
 
     // ラベルとデータ追加
     labels.push(i);

@@ -11,16 +11,16 @@ import Select from "react-select";
 function Main() {
   const [selectedContest, setSelectedContest] = useState(contest_data[0].id);
   const [teamOptions, setTeamOptions] = useState<{ value: string; label: string }[]>([]);
-  const [selectedTeams, setSelectedTeams] = useState<string[]>([]);
+  const [selectedTeams, setSelectedTeams] = useState<string[]>([]); // 空配列が初期値
 
   useEffect(() => {
     const contestData = json_data[selectedContest];
     if (contestData) {
-      const teams = contestData.StandingsData.map((team) => team.TeamName)
+      const teams = contestData.StandingsData
+        .map((team) => team.TeamName)
         .sort()
         .map((name) => ({ value: name, label: name }));
       setTeamOptions(teams);
-      setSelectedTeams([teams[0].value]); // 最初のチームをデフォルトで選択
     }
   }, [selectedContest]);
 

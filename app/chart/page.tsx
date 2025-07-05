@@ -17,7 +17,6 @@ import {
   LineElement,
   Title,
   Tooltip,
-  TooltipItem,
   Legend,
 } from "chart.js";
 
@@ -31,97 +30,99 @@ ChartJS.register(
   Legend,
 );
 
+// チーム名から安定した色を生成
+function teamColor(name: string): string {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const hue = (hash % 360 + 360) % 360;
+  return `hsl(${hue}, 70%, 50%)`;
+}
+
 function rank_and_solved(contest: string, id: number, time: number): [number, string[]] {
-  var score: number = 0;
-  var penalty: number = 0;
-  var cnt = 0;
-  var solved: string[] = [];
+  let score = 0;
+  let penalty = 0;
+  const solved: string[] = [];
+
   for (const p in json_data[contest].StandingsData[id].TaskResults) {
-    let task: any = json_data[contest].StandingsData[id].TaskResults[p];
+    const task = json_data[contest].StandingsData[id].TaskResults[p];
     if (task.Score > 0 && task.Elapsed <= time) {
       score += task.Score;
       penalty += task.Elapsed;
       penalty += task.Penalty * json_data[contest].ContestData.Penalty;
-      if (task.Elapsed == time) {
+      if (task.Elapsed === time) {
         solved.push(p);
       }
     }
   }
+
+  let rank = 1;
   for (let i = 0; i < json_data[contest].StandingsData.length; i++) {
-    if (i == id) continue;
-    var tmp_score: number = 0;
-    var tmp_penalty: number = 0;
+    if (i === id) continue;
+    let tmpScore = 0;
+    let tmpPenalty = 0;
     for (const p in json_data[contest].StandingsData[i].TaskResults) {
-      let task: any = json_data[contest].StandingsData[i].TaskResults[p];
+      const task = json_data[contest].StandingsData[i].TaskResults[p];
       if (task.Score > 0 && task.Elapsed <= time) {
-        tmp_score += task.Score;
-        tmp_penalty += task.Elapsed;
-        tmp_penalty += task.Penalty * json_data[contest].ContestData.Penalty;
+        tmpScore += task.Score;
+        tmpPenalty += task.Elapsed;
+        tmpPenalty += task.Penalty * json_data[contest].ContestData.Penalty;
       }
     }
-    if (tmp_score > score || (tmp_score == score && tmp_penalty < penalty)) {
-      cnt++;
+    if (tmpScore > score || (tmpScore === score && tmpPenalty < penalty)) {
+      rank++;
     }
   }
-  return [cnt + 1, solved];
+
+  return [rank, solved];
 }
 
-function Chart(contest: string, team: string, id: number) {
-  const contest_name: string = (() => {
-    for (let i = 0; i < contest_data.length; i++) {
-      if (contest_data[i].id == contest) {
-        return contest_data[i].name;
+function Chart({ contest, teams }: { contest: string; teams: string[] }) {
+  const contest_name = contest_data.find(c => c.id === contest)?.name ?? "";
+
+  const datasets = teams.map(team => {
+    const id = json_data[contest].StandingsData.findIndex(t => t.TeamName === team);
+    if (id === -1) return null;
+
+    const labels: number[] = [];
+    const ranks: number[] = [];
+    const backgroundColors: string[] = [];
+    const pointSizes: number[] = [];
+
+    const color = teamColor(team);
+    let presolved = false;
+
+    for (let i = 0; i <= json_data[contest].ContestData.Duration; i++) {
+      const [r, solved] = rank_and_solved(contest, id, i);
+
+      if (ranks.length >= 2 && ranks[ranks.length - 1] === r && ranks[ranks.length - 2] === r && !presolved) {
+        labels.pop();
+        ranks.pop();
+        backgroundColors.pop();
+        pointSizes.pop();
       }
-    }
-    return "";
-  })();
 
-  const labels: number[] = [];
-  const ranks: number[] = [];
-  const backgroundColors: string[] = [];
-  const pointSizes: number[] = [];
+      presolved = solved.length > 0;
 
-  let presolved = false;
-
-  for (let i = 0; i <= json_data[contest].ContestData.Duration; i++) {
-    let [r, solved] = rank_and_solved(contest, id, i);
-
-    if (ranks.length >= 2 && ranks[ranks.length - 1] == r && ranks[ranks.length - 2] == r && !presolved) {
-      labels.pop();
-      ranks.pop();
-      backgroundColors.pop();
-      pointSizes.pop();
+      labels.push(i);
+      ranks.push(r);
+      backgroundColors.push(solved.length > 0 ? color.replace("50%", "60%") : color); // 明るさ変化
+      pointSizes.push(solved.length > 0 ? 10 : 5);
     }
 
-    presolved = solved.length > 0;
-
-    // ラベルとデータ追加
-    labels.push(i);
-    ranks.push(r);
-
-    // 解いたところは色とサイズを変える
-    if (solved.length > 0) {
-      backgroundColors.push("rgba(0, 200, 0, 0.8)");  // 濃い緑
-      pointSizes.push(10);                            // 大きめのマーカー
-    } else {
-      backgroundColors.push("rgba(75,192,192,0.4)"); // 通常の色
-      pointSizes.push(5);                             // 通常のサイズ
-    }
-  }
-
-  const data = {
-    labels,
-    datasets: [{
+    return {
       label: team,
-      data: ranks,
-      fill: false,
+      data: labels.map((t, i) => ({ x: t, y: ranks[i] })),
       backgroundColor: backgroundColors,
-      borderColor: "rgba(75,192,192,1)",
-      showLine: true,
+      borderColor: color,
       pointRadius: pointSizes,
-      pointHoverRadius: pointSizes.map(s => s + 3), // ホバー時は少し大きく
-    }],
-  };
+      pointHoverRadius: pointSizes.map(s => s + 3),
+      showLine: true,
+    };
+  }).filter((ds): ds is NonNullable<typeof ds> => ds !== null);
+
+  const data = { datasets };
 
   const options = {
     responsive: true,
@@ -131,7 +132,7 @@ function Chart(contest: string, team: string, id: number) {
         max: json_data[contest].ContestData.Duration,
         title: {
           display: true,
-          text: "time (" + json_data[contest].ContestData.UnitTime + ")",
+          text: `time (${json_data[contest].ContestData.UnitTime})`,
         },
       },
       y: {
@@ -143,19 +144,16 @@ function Chart(contest: string, team: string, id: number) {
       },
     },
     plugins: {
-      legend: {},
       tooltip: {
         callbacks: {
-          title: function (context: any) {
+          title: (context: any) => {
             const time = context[0]?.parsed.x;
             return `Time: ${time} (${json_data[contest].ContestData.UnitTime})`;
           },
-          label: function (context: any) {
+          label: (context: any) => {
             const time = context.parsed.x;
             const teamLabel = context.dataset.label;
-            const teamId = json_data[contest].StandingsData.findIndex((t: any) => t.TeamName === teamLabel);
-            if (teamId === -1) return `Rank: ${context.parsed.y}`;
-
+            const teamId = json_data[contest].StandingsData.findIndex(t => t.TeamName === teamLabel);
             const [, solved] = rank_and_solved(contest, teamId, time);
             const solvedStr = solved.length > 0 ? `Solved: ${solved.join(", ")}` : "No problems solved at this time";
             return `Rank: ${context.parsed.y}, ${solvedStr}`;
@@ -167,9 +165,7 @@ function Chart(contest: string, team: string, id: number) {
 
   return (
     <div>
-      contest: {contest_name}<br />
-      team: {team}<br />
-      university: {json_data[contest].StandingsData[id].University}<br />
+      <div className="mb-2">contest: {contest_name}</div>
       <Scatter data={data} options={options} />
     </div>
   );
@@ -178,13 +174,14 @@ function Chart(contest: string, team: string, id: number) {
 function Query() {
   const searchParams = useSearchParams();
   const contest = searchParams.get("contest");
-  const team = searchParams.get("team");
-  if (contest == null || team == null) {
+  const teams = searchParams.getAll("team").map(t => t.trim()).filter(t => t.length > 0);
+
+  if (!contest || teams.length === 0) {
     return (
       <div className="p-4 text-red-700">
         <p>Missing query parameters:</p>
-        <p>Contest: {contest ?? "(not specified)"}</p>
-        <p>Team: {team ?? "(not specified)"}</p>
+        <p>contest: {contest ?? "(not specified)"}</p>
+        <p>teams: {teams.length > 0 ? teams.join(", ") : "(not specified)"}</p>
       </div>
     );
   }
@@ -198,18 +195,20 @@ function Query() {
     );
   }
 
-  const id = json_data[contest].StandingsData.findIndex(t => t.TeamName === team);
-  if (id === -1) {
+  const missingTeams = teams.filter(team => (
+    json_data[contest].StandingsData.findIndex(t => t.TeamName === team) === -1
+  ));
+
+  if (missingTeams.length > 0) {
     return (
       <div className="p-4 text-red-700">
-        <p>Contest: {contest}</p>
-        <p>Team: {team}</p>
-        <p>No such team found.</p>
+        <p>Invalid team name(s):</p>
+        {missingTeams.map(t => <p key={t}>- {t}</p>)}
       </div>
     );
   }
 
-  return Chart(contest, team, id);
+  return <Chart contest={contest} teams={teams} />;
 }
 
 function Main() {

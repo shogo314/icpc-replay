@@ -11,7 +11,6 @@ ICPC (International Collegiate Programming Contest) の順位変動を時系列�
 主な機能:
 - 各チームの提出状況と順位変動の可視化
 - 特定の時点へのシーク機能
-- [icpc_standings](https://github.com/shogo314/icpc_standings) を利用したHTMLからJSONへのデータ変換
 
 ## 使用技術 (Tech Stack)
 
@@ -31,7 +30,7 @@ ICPC (International Collegiate Programming Contest) の順位変動を時系列�
 1.  リポジトリをクローンします。
 
 ```bash
-git clone [https://github.com/shogo314/icpc-replay.git](https://github.com/shogo314/icpc-replay.git)
+git clone https://github.com/shogo314/icpc-replay.git
 cd icpc-replay
 ```
 

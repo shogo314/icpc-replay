@@ -17,8 +17,10 @@ import standings_2025_seoul from "../public/json/standings_2025_seoul.json";
 import standings_2025_jakarta from "../public/json/standings_2025_jakarta.json";
 import standings_2025_yokohama from "../public/json/standings_2025_yokohama.json";
 import standings_2026_asia_pacific from "../public/json/standings_2026_asia_pacific.json";
+import standings_2026_domestic from "../public/json/standings_2026_domestic.json";
 
 export const contest_data = [
+    { id: "2026_domestic", name: "ICPC 2026 日本 国内予選" },
     { id: "2026_asia_pacific", name: "The 2026 ICPC Asia Pacific Championship" },
     { id: "2025_yokohama", name: "ICPC 2025 Asia Yokohama Regional" },
     { id: "2025_jakarta", name: "ICPC 2025 Asia Jakarta Regional" },
@@ -60,6 +62,7 @@ export const json_data = {
     "2025_jakarta": standings_2025_jakarta,
     "2025_yokohama": standings_2025_yokohama,
     "2026_asia_pacific": standings_2026_asia_pacific,
+    "2026_domestic": standings_2026_domestic,
 } as {
     [key: string]: {
         ContestData: {

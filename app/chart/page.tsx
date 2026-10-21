@@ -19,6 +19,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  type Plugin,
 } from "chart.js";
 
 ChartJS.register(
@@ -31,15 +32,62 @@ ChartJS.register(
   Legend,
 );
 
-// チーム名から安定した色を生成
-function teamColor(name: string): string {
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  const hue = (hash % 360 + 360) % 360;
-  return `hsl(${hue}, 70%, 50%)`;
+// 隣り合う系列が色覚多様性でも区別しやすいよう検証済みのカテゴリカルパレット
+const SERIES_COLORS = [
+  "#2a78d6", // blue
+  "#eb6834", // orange
+  "#1baf7a", // aqua
+  "#eda100", // yellow
+  "#e87ba4", // magenta
+  "#008300", // green
+  "#6250d6", // violet
+  "#e34948", // red
+];
+
+// 選択順に色を割り当てる。9 チーム目以降は色を再利用し、線種(破線)で区別する
+function teamStyle(index: number): { color: string; dash: number[] } {
+  const round = Math.floor(index / SERIES_COLORS.length);
+  return {
+    color: SERIES_COLORS[index % SERIES_COLORS.length],
+    dash: round === 0 ? [] : round === 1 ? [6, 4] : [2, 3],
+  };
 }
+
+// 正解した点の上に問題名のラベルを描く
+const solvedLabelPlugin: Plugin<"scatter"> = {
+  id: "solvedLabel",
+  afterDatasetsDraw(chart) {
+    const ctx = chart.ctx;
+    ctx.save();
+    ctx.font = "600 11px sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    chart.data.datasets.forEach((dataset, di) => {
+      const meta = chart.getDatasetMeta(di);
+      if (meta.hidden) return;
+      const solvedList = (dataset as { solved?: string[][] }).solved ?? [];
+      meta.data.forEach((point, i) => {
+        const solved = solvedList[i];
+        if (!solved || solved.length === 0) return;
+        const text = solved.join(",");
+        const w = ctx.measureText(text).width + 8;
+        const h = 16;
+        const x = point.x;
+        const y = point.y - 16;
+        ctx.fillStyle = "rgba(255, 255, 255, 0.92)";
+        ctx.strokeStyle = dataset.borderColor as string;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.roundRect(x - w / 2, y - h / 2, w, h, 4);
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = "#1f2937";
+        ctx.fillText(text, x, y);
+      });
+    });
+    ctx.restore();
+  },
+};
 
 function rank_and_solved(contest: string, id: number, time: number): [number, string[]] {
   let score = 0;
@@ -79,19 +127,51 @@ function rank_and_solved(contest: string, id: number, time: number): [number, st
   return [rank, solved];
 }
 
+function ProblemSet({ contest, results }: { contest: string; results: { [key: string]: any } }) {
+  const unit = json_data[contest].ContestData.UnitTime;
+  return (
+    <div className="flex flex-wrap gap-1">
+      {json_data[contest].ContestData.TaskInfo.map(p => {
+        const r = results[p];
+        const solved = r && r.Score > 0;
+        const attempted = r && !solved && r.Penalty > 0;
+        // 色は ICPC 公式速報サイト (icpcsec) の順位表に合わせる
+        const cls = solved
+          ? "bg-[#64dd17] text-black border-[#64dd17]"
+          : attempted
+            ? "bg-[#ff5252] text-black border-[#ff5252]"
+            : "bg-white text-gray-400 border-gray-200";
+        const title = solved
+          ? `${p}: ${r.Elapsed} ${unit}` + (r.Penalty > 0 ? ` (誤答 ${r.Penalty})` : "")
+          : attempted
+            ? `${p}: 未正解 (誤答 ${r.Penalty})`
+            : `${p}: 未提出`;
+        return (
+          <span
+            key={p}
+            title={title}
+            className={`inline-flex w-6 h-6 items-center justify-center rounded border text-xs font-semibold ${cls}`}
+          >
+            {p}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
 function Chart({ contest, teams }: { contest: string; teams: string[] }) {
   const contest_name = contest_data.find(c => c.id === contest)?.name ?? "";
 
-  const datasets = teams.map(team => {
+  const datasets = teams.map((team, index) => {
     const id = json_data[contest].StandingsData.findIndex(t => t.TeamName === team);
     if (id === -1) return null;
 
     const labels: number[] = [];
     const ranks: number[] = [];
-    const backgroundColors: string[] = [];
-    const pointSizes: number[] = [];
+    const solvedAt: string[][] = [];
 
-    const color = teamColor(team);
+    const { color, dash } = teamStyle(index);
     let presolved = false;
 
     for (let i = 0; i <= json_data[contest].ContestData.Duration; i++) {
@@ -100,25 +180,31 @@ function Chart({ contest, teams }: { contest: string; teams: string[] }) {
       if (ranks.length >= 2 && ranks[ranks.length - 1] === r && ranks[ranks.length - 2] === r && !presolved) {
         labels.pop();
         ranks.pop();
-        backgroundColors.pop();
-        pointSizes.pop();
+        solvedAt.pop();
       }
 
       presolved = solved.length > 0;
 
       labels.push(i);
       ranks.push(r);
-      backgroundColors.push(solved.length > 0 ? color.replace("50%", "60%") : color); // 明るさ変化
-      pointSizes.push(solved.length > 0 ? 10 : 5);
+      solvedAt.push(solved);
     }
+
+    const pointSizes = solvedAt.map(s => (s.length > 0 ? 6 : 0));
 
     return {
       label: team,
       data: labels.map((t, i) => ({ x: t, y: ranks[i] })),
-      backgroundColor: backgroundColors,
+      solved: solvedAt,
+      backgroundColor: color,
       borderColor: color,
+      borderWidth: 2,
+      borderDash: dash,
+      pointBorderColor: "#ffffff",
+      pointBorderWidth: 2,
       pointRadius: pointSizes,
-      pointHoverRadius: pointSizes.map(s => s + 3),
+      pointHoverRadius: pointSizes.map(s => s + 2),
+      pointHitRadius: 8,
       showLine: true,
     };
   }).filter((ds): ds is NonNullable<typeof ds> => ds !== null);
@@ -128,6 +214,7 @@ function Chart({ contest, teams }: { contest: string; teams: string[] }) {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+    layout: { padding: { top: 24 } },
     scales: {
       x: {
         min: 0,
@@ -168,9 +255,12 @@ function Chart({ contest, teams }: { contest: string; teams: string[] }) {
   const contestInfo = json_data[contest].ContestData;
   const teamCount = json_data[contest].StandingsData.length;
   const selectedTeams = teams
-    .map(team => json_data[contest].StandingsData.find(t => t.TeamName === team))
-    .filter((t): t is NonNullable<typeof t> => t !== undefined)
-    .sort((a, b) => a.Rank - b.Rank);
+    .map((team, index) => ({
+      team: json_data[contest].StandingsData.find(t => t.TeamName === team),
+      style: teamStyle(index),
+    }))
+    .filter((t): t is { team: NonNullable<typeof t.team>; style: typeof t.style } => t.team !== undefined)
+    .sort((a, b) => a.team.Rank - b.team.Rank);
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 space-y-6">
@@ -198,7 +288,7 @@ function Chart({ contest, teams }: { contest: string; teams: string[] }) {
 
       <section className="bg-white border rounded-lg shadow-sm p-4">
         <div className="relative h-[60vh] min-h-[320px] max-h-[560px]">
-          <Scatter data={data} options={options} />
+          <Scatter data={data} options={options} plugins={[solvedLabelPlugin]} />
         </div>
       </section>
 
@@ -210,24 +300,33 @@ function Chart({ contest, teams }: { contest: string; teams: string[] }) {
               <th className="px-4 py-2 text-left">チーム</th>
               <th className="px-4 py-2 text-left">所属</th>
               <th className="px-4 py-2 text-right">正解数</th>
+              <th className="px-4 py-2 text-left">問題</th>
               <th className="px-4 py-2 text-right">ペナルティ</th>
             </tr>
           </thead>
           <tbody>
-            {selectedTeams.map(t => (
+            {selectedTeams.map(({ team: t, style }) => (
               <tr key={t.TeamName} className="border-t">
                 <td className="px-4 py-2 text-right font-medium">{t.Rank}</td>
                 <td className="px-4 py-2">
                   <span className="inline-flex items-center gap-2">
-                    <span
-                      className="inline-block w-3 h-3 rounded-full shrink-0"
-                      style={{ backgroundColor: teamColor(t.TeamName) }}
-                    />
+                    <svg width="20" height="8" className="shrink-0" aria-hidden="true">
+                      <line
+                        x1="1" y1="4" x2="19" y2="4"
+                        stroke={style.color}
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeDasharray={style.dash.join(" ")}
+                      />
+                    </svg>
                     {t.TeamName}
                   </span>
                 </td>
                 <td className="px-4 py-2 text-gray-600">{t.University}</td>
-                <td className="px-4 py-2 text-right">{t.TotalResult.Score}</td>
+                <td className="px-4 py-2 text-right font-medium">{t.TotalResult.Score}</td>
+                <td className="px-4 py-2">
+                  <ProblemSet contest={contest} results={t.TaskResults} />
+                </td>
                 <td className="px-4 py-2 text-right">{t.TotalResult.Penalty}</td>
               </tr>
             ))}

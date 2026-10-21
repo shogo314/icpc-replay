@@ -74,6 +74,7 @@ function Main() {
           </label>
           <Select
             isMulti
+            instanceId="team-select"
             options={teamOptions}
             value={teamOptions.filter((opt) => selectedTeams.includes(opt.value))}
             onChange={handleTeamChange}

@@ -54,10 +54,16 @@ function Main() {
             onChange={handleContestChange}
             className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
           >
-            {contest_data.map((contest) => (
-              <option key={contest.id} value={contest.id}>
-                {contest.name}
-              </option>
+            {[...new Set(contest_data.map((c) => c.id.slice(0, 4)))].map((year) => (
+              <optgroup key={year} label={year}>
+                {contest_data
+                  .filter((c) => c.id.startsWith(year))
+                  .map((contest) => (
+                    <option key={contest.id} value={contest.id}>
+                      {contest.name}
+                    </option>
+                  ))}
+              </optgroup>
             ))}
           </select>
         </div>

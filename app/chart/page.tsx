@@ -3,6 +3,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import Link from "next/link";
 
 import { contest_data, json_data } from "../standings_data";
 import Header from "../header";
@@ -126,6 +127,7 @@ function Chart({ contest, teams }: { contest: string; teams: string[] }) {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         min: 0,
@@ -163,10 +165,75 @@ function Chart({ contest, teams }: { contest: string; teams: string[] }) {
     },
   };
 
+  const contestInfo = json_data[contest].ContestData;
+  const teamCount = json_data[contest].StandingsData.length;
+  const selectedTeams = teams
+    .map(team => json_data[contest].StandingsData.find(t => t.TeamName === team))
+    .filter((t): t is NonNullable<typeof t> => t !== undefined)
+    .sort((a, b) => a.Rank - b.Rank);
+
   return (
-    <div>
-      <div className="mb-2">contest: {contest_name}</div>
-      <Scatter data={data} options={options} />
+    <div className="max-w-5xl mx-auto px-4 py-8 space-y-6">
+      <section className="bg-white border rounded-lg shadow-sm p-5">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <h2 className="text-xl font-bold text-gray-800">{contest_name}</h2>
+          <Link href="/" className="text-sm">
+            ← 選択に戻る
+          </Link>
+        </div>
+        <dl className="mt-3 flex flex-wrap gap-2 text-sm">
+          {[
+            ["時間", `${contestInfo.Duration} ${contestInfo.UnitTime}`],
+            ["問題数", `${contestInfo.TaskInfo.length}`],
+            ["参加チーム", `${teamCount}`],
+            ["ペナルティ", `${contestInfo.Penalty} ${contestInfo.UnitTime}`],
+          ].map(([k, v]) => (
+            <div key={k} className="flex gap-1 rounded-full bg-gray-100 px-3 py-1">
+              <dt className="text-gray-500">{k}</dt>
+              <dd className="font-medium text-gray-800">{v}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section className="bg-white border rounded-lg shadow-sm p-4">
+        <div className="relative h-[60vh] min-h-[320px] max-h-[560px]">
+          <Scatter data={data} options={options} />
+        </div>
+      </section>
+
+      <section className="bg-white border rounded-lg shadow-sm overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead className="bg-gray-50 text-gray-600">
+            <tr>
+              <th className="px-4 py-2 text-right">最終順位</th>
+              <th className="px-4 py-2 text-left">チーム</th>
+              <th className="px-4 py-2 text-left">所属</th>
+              <th className="px-4 py-2 text-right">正解数</th>
+              <th className="px-4 py-2 text-right">ペナルティ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {selectedTeams.map(t => (
+              <tr key={t.TeamName} className="border-t">
+                <td className="px-4 py-2 text-right font-medium">{t.Rank}</td>
+                <td className="px-4 py-2">
+                  <span className="inline-flex items-center gap-2">
+                    <span
+                      className="inline-block w-3 h-3 rounded-full shrink-0"
+                      style={{ backgroundColor: teamColor(t.TeamName) }}
+                    />
+                    {t.TeamName}
+                  </span>
+                </td>
+                <td className="px-4 py-2 text-gray-600">{t.University}</td>
+                <td className="px-4 py-2 text-right">{t.TotalResult.Score}</td>
+                <td className="px-4 py-2 text-right">{t.TotalResult.Penalty}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
     </div>
   );
 }

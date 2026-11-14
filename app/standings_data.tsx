@@ -13,6 +13,7 @@ import standings_2025_asia_pacific from "../public/json/standings_2025_asia_paci
 import standings_2025_domestic from "../public/json/standings_2025_domestic.json";
 import standings_2025_bangkok from "../public/json/standings_2025_bangkok.json";
 import standings_2025_taichung from "../public/json/standings_2025_taichung.json";
+import standings_2025_manila from "../public/json/standings_2025_manila.json";
 import standings_2025_seoul from "../public/json/standings_2025_seoul.json";
 import standings_2025_jakarta from "../public/json/standings_2025_jakarta.json";
 import standings_2025_yokohama from "../public/json/standings_2025_yokohama.json";
@@ -23,6 +24,7 @@ import standings_2026_domestic from "../public/json/standings_2026_domestic.json
 export const contest_data = [
     { id: "2026_domestic", name: "ICPC 2026 日本 国内予選", season: "2026–2027" },
     { id: "2026_asia_pacific", name: "The 2026 ICPC Asia Pacific Championship", season: "2025–2026" },
+    { id: "2025_manila", name: "ICPC 2025 Asia Manila Regional", season: "2025–2026" },
     { id: "2025_yokohama", name: "ICPC 2025 Asia Yokohama Regional", season: "2025–2026" },
     { id: "2025_jakarta", name: "ICPC 2025 Asia Jakarta Regional", season: "2025–2026" },
     { id: "2025_seoul", name: "ICPC 2025 Asia Seoul Regional", season: "2025–2026" },
@@ -59,6 +61,7 @@ export const json_data = {
     "2025_domestic": standings_2025_domestic,
     "2025_bangkok": standings_2025_bangkok,
     "2025_taichung": standings_2025_taichung,
+    "2025_manila": standings_2025_manila,
     "2025_seoul": standings_2025_seoul,
     "2025_jakarta": standings_2025_jakarta,
     "2025_yokohama": standings_2025_yokohama,

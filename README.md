@@ -88,6 +88,17 @@ Cloudflareのダッシュボードから **Workers & Pages → Create applicatio
 
 移行時は、PagesのデプロイURLでトップページ・チーム選択後の `/chart?contest=...&team=...`・`/json` とJSONファイルの表示を確認し、必要なカスタムドメインを設定します。公開を確認してから、README冒頭のURLを更新し、Vercel側の自動デプロイを停止してください。
 
+### Seoul大会の順位表データを更新する
+
+`~/icpc_standings` で、ブラウザに描画された順位表を `html/2026 ICPC Asia Seoul Regional.html` に保存した後、このリポジトリで以下を実行します。
+
+```bash
+python3 tools/import_seoul.py --year 2026
+npm run build
+```
+
+`icpc_standings/seoul.py` でHTMLを変換し、順位表JSONのコピーと大会選択欄への登録を行います。別の場所にデータ管理リポジトリがある場合は `--source PATH` を指定します。変換にはPythonとBeautifulSoup4が必要です。開催中・凍結中の順位表は最終結果とは限らないため、公開前に保存時点を確認してください。
+
 ## 今後の展望 (Roadmap) / コントリビューション
 
 現在は基本的な可視化機能を実装していますが、以下の点での改善や機能追加を歓迎します。

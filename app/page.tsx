@@ -54,10 +54,10 @@ function Main() {
             onChange={handleContestChange}
             className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
           >
-            {[...new Set(contest_data.map((c) => c.id.slice(0, 4)))].map((year) => (
-              <optgroup key={year} label={year}>
+            {[...new Set(contest_data.map((c) => c.season))].map((season) => (
+              <optgroup key={season} label={`${season}シーズン`}>
                 {contest_data
-                  .filter((c) => c.id.startsWith(year))
+                  .filter((c) => c.season === season)
                   .map((contest) => (
                     <option key={contest.id} value={contest.id}>
                       {contest.name}

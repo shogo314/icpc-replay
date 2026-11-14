@@ -19,27 +19,28 @@ import standings_2025_yokohama from "../public/json/standings_2025_yokohama.json
 import standings_2026_asia_pacific from "../public/json/standings_2026_asia_pacific.json";
 import standings_2026_domestic from "../public/json/standings_2026_domestic.json";
 
+// シーズンは予選からWorld Finalsまでの大会系列を表し、開催年とは分けて管理する。
 export const contest_data = [
-    { id: "2026_domestic", name: "ICPC 2026 日本 国内予選" },
-    { id: "2026_asia_pacific", name: "The 2026 ICPC Asia Pacific Championship" },
-    { id: "2025_yokohama", name: "ICPC 2025 Asia Yokohama Regional" },
-    { id: "2025_jakarta", name: "ICPC 2025 Asia Jakarta Regional" },
-    { id: "2025_seoul", name: "ICPC 2025 Asia Seoul Regional" },
-    { id: "2025_taichung", name: "ICPC 2025 Asia Taichung Regional" },
-    { id: "2025_bangkok", name: "ICPC 2025 Asia Bangkok Regional" },
-    { id: "2025_domestic", name: "ICPC 2025 日本 国内予選" },
-    { id: "2025_asia_pacific", name: "The 2025 ICPC Asia Pacific Championship" },
-    { id: "2024_yokohama", name: "ICPC 2024 Asia Yokohama Regional" },
-    { id: "2024_jakarta", name: "ICPC 2024 Asia Jakarta Regional" },
-    { id: "2024_seoul", name: "ICPC 2024 Asia Seoul Regional" },
-    { id: "2024_taichung", name: "ICPC 2024 Asia Taichung Regional" },
-    { id: "2024_domestic", name: "ICPC 2024 日本 国内予選" },
-    { id: "2024_asia_pacific", name: "The 2024 ICPC Asia Pacific Championship" },
-    { id: "2023_yokohama", name: "ICPC 2023 Asia Yokohama Regional" },
-    { id: "2023_jakarta", name: "ICPC 2023 Asia Jakarta Regional" },
-    { id: "2023_seoul", name: "ICPC 2023 Asia Seoul Regional" },
-    { id: "2023_domestic", name: "ICPC 2023 日本 国内予選" },
-    { id: "2022_yokohama", name: "ICPC 2022 Asia Yokohama Regional" },
+    { id: "2026_domestic", name: "ICPC 2026 日本 国内予選", season: "2026–2027" },
+    { id: "2026_asia_pacific", name: "The 2026 ICPC Asia Pacific Championship", season: "2025–2026" },
+    { id: "2025_yokohama", name: "ICPC 2025 Asia Yokohama Regional", season: "2025–2026" },
+    { id: "2025_jakarta", name: "ICPC 2025 Asia Jakarta Regional", season: "2025–2026" },
+    { id: "2025_seoul", name: "ICPC 2025 Asia Seoul Regional", season: "2025–2026" },
+    { id: "2025_taichung", name: "ICPC 2025 Asia Taichung Regional", season: "2025–2026" },
+    { id: "2025_bangkok", name: "ICPC 2025 Asia Bangkok Regional", season: "2025–2026" },
+    { id: "2025_domestic", name: "ICPC 2025 日本 国内予選", season: "2025–2026" },
+    { id: "2025_asia_pacific", name: "The 2025 ICPC Asia Pacific Championship", season: "2024–2025" },
+    { id: "2024_yokohama", name: "ICPC 2024 Asia Yokohama Regional", season: "2024–2025" },
+    { id: "2024_jakarta", name: "ICPC 2024 Asia Jakarta Regional", season: "2024–2025" },
+    { id: "2024_seoul", name: "ICPC 2024 Asia Seoul Regional", season: "2024–2025" },
+    { id: "2024_taichung", name: "ICPC 2024 Asia Taichung Regional", season: "2024–2025" },
+    { id: "2024_domestic", name: "ICPC 2024 日本 国内予選", season: "2024–2025" },
+    { id: "2024_asia_pacific", name: "The 2024 ICPC Asia Pacific Championship", season: "2023–2024" },
+    { id: "2023_yokohama", name: "ICPC 2023 Asia Yokohama Regional", season: "2023–2024" },
+    { id: "2023_jakarta", name: "ICPC 2023 Asia Jakarta Regional", season: "2023–2024" },
+    { id: "2023_seoul", name: "ICPC 2023 Asia Seoul Regional", season: "2023–2024" },
+    { id: "2023_domestic", name: "ICPC 2023 日本 国内予選", season: "2023–2024" },
+    { id: "2022_yokohama", name: "ICPC 2022 Asia Yokohama Regional", season: "2022–2023" },
 ];
 
 export const json_data = {

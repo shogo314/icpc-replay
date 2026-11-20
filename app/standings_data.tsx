@@ -1,3 +1,4 @@
+import standings_2026_seoul from "../public/json/standings_2026_seoul.json";
 import standings_2022_yokohama from "../public/json/standings_2022_yokohama.json";
 import standings_2023_domestic from "../public/json/standings_2023_domestic.json";
 import standings_2023_seoul from "../public/json/standings_2023_seoul.json";
@@ -22,6 +23,7 @@ import standings_2026_domestic from "../public/json/standings_2026_domestic.json
 
 // シーズンは予選からWorld Finalsまでの大会系列を表し、開催年とは分けて管理する。
 export const contest_data = [
+    { id: "2026_seoul", name: "ICPC 2026 Asia Seoul Regional", season: "2026–2027" },
     { id: "2026_domestic", name: "ICPC 2026 日本 国内予選", season: "2026–2027" },
     { id: "2026_asia_pacific", name: "The 2026 ICPC Asia Pacific Championship", season: "2025–2026" },
     { id: "2025_manila", name: "ICPC 2025 Asia Manila Regional", season: "2025–2026" },
@@ -46,6 +48,7 @@ export const contest_data = [
 ];
 
 export const json_data = {
+    "2026_seoul": standings_2026_seoul,
     "2022_yokohama": standings_2022_yokohama,
     "2023_domestic": standings_2023_domestic,
     "2023_seoul": standings_2023_seoul,

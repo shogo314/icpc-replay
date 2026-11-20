@@ -1,16 +1,12 @@
 # ICPC Replay
 
-ICPC (International Collegiate Programming Contest) の順位変動を時系列で可視化するWebアプリケーションです。[AtCoder Replay](https://atcoder-replay.kakira.dev/) にインスパイアされて作成されました。
-
-**URL:** [https://icpc-replay.vercel.app/](https://icpc-replay.vercel.app/)
+[ICPC Replay を開く](https://icpc-replay.pages.dev/)
 
 ## 概要 (Overview)
 
-競技プログラミングコンテスト ICPC の順位表データを解析し、コンテスト中の順位変動やスコアの推移をリプレイ形式で再生することができます。
+ICPCの日本国内予選やアジアの地域大会などで、各チームの順位が競技中にどう変わったかをグラフでたどれます。[AtCoder Replay](https://atcoder-replay.kakira.dev/) に着想を得て作成しました。
 
-主な機能:
-- 各チームの提出状況と順位変動の可視化
-- 特定の時点へのシーク機能
+シーズン別の一覧から大会を選び、比較したいチームを選んで「Show chart」を押します。グラフ上の点にカーソルを合わせると、その時点の順位と、その時刻に解いた問題を確認できます。各大会の元データは[順位表JSON一覧](https://icpc-replay.pages.dev/json)から閲覧できます。
 
 ## 今シーズンの大会日程（2026–2027）
 
@@ -85,8 +81,6 @@ Cloudflareのダッシュボードから **Workers & Pages → Create applicatio
 | Environment variable | `NODE_VERSION=24` |
 
 接続後は `main` ブランチへのプッシュで自動デプロイされます。設定方法は[Cloudflare公式ガイド](https://developers.cloudflare.com/pages/framework-guides/nextjs/deploy-a-static-nextjs-site/)を参照してください。
-
-移行時は、PagesのデプロイURLでトップページ・チーム選択後の `/chart?contest=...&team=...`・`/json` とJSONファイルの表示を確認し、必要なカスタムドメインを設定します。公開を確認してから、README冒頭のURLを更新し、Vercel側の自動デプロイを停止してください。
 
 ### Seoul大会の順位表データを更新する
 

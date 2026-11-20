@@ -175,6 +175,7 @@ function Chart({ contest, teams }: { contest: string; teams: string[] }) {
 
     const { color, dash } = teamStyle(index);
     let presolved = false;
+    let peakRank: number | null = null;
 
     for (let i = 0; i <= json_data[contest].ContestData.Duration; i++) {
       const [r, solved] = rank_and_solved(contest, id, i);
@@ -186,6 +187,8 @@ function Chart({ contest, teams }: { contest: string; teams: string[] }) {
       }
 
       presolved = solved.length > 0;
+      // 初正解以降、順位が上がり得るのは自チームが正解した時刻だけ。
+      if (presolved) peakRank = Math.min(peakRank ?? r, r);
 
       labels.push(i);
       ranks.push(r);
@@ -196,6 +199,7 @@ function Chart({ contest, teams }: { contest: string; teams: string[] }) {
 
     return {
       label: team,
+      peakRank,
       data: labels.map((t, i) => ({ x: t, y: ranks[i] })),
       solved: solvedAt,
       backgroundColor: color,
@@ -292,7 +296,15 @@ function Chart({ contest, teams }: { contest: string; teams: string[] }) {
         <div className="relative h-[60vh] min-h-[320px] max-h-[560px]">
           <Scatter ref={chartRef} data={data} options={options} plugins={[solvedLabelPlugin]} />
         </div>
-        <ShareChart key={JSON.stringify([contest, ...teams])} chartRef={chartRef} contest={contest} title={contest_name} />
+        <ShareChart
+          key={JSON.stringify([contest, ...teams])}
+          chartRef={chartRef}
+          contest={contest}
+          title={contest_name}
+          rankSummary={datasets.map(({ label, peakRank }) =>
+            peakRank === null ? `${label}：正解なし` : `${label}：瞬間最高${peakRank}位`
+          ).join("\n")}
+        />
       </section>
 
       <section className="bg-white border rounded-lg shadow-sm overflow-x-auto">

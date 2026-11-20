@@ -5,6 +5,7 @@ type Props = {
   chartRef: RefObject<Chart<"scatter"> | null>;
   contest: string;
   title: string;
+  rankSummary: string;
 };
 
 function chartImage({ chartRef, contest, title }: Props): File {
@@ -62,14 +63,15 @@ export default function ShareChart(props: Props) {
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
   const [fallback, setFallback] = useState(false);
-  const [intent, setIntent] = useState("");
+  const [chartUrl, setChartUrl] = useState("");
+  const postText = `${props.title}\n${props.rankSummary}\n\n#ICPCReplay\n${chartUrl}`;
+  const intent = chartUrl ? `https://twitter.com/intent/tweet?${new URLSearchParams({ text: postText })}` : "";
 
   useEffect(() => {
     const probe = new File([], "chart.png", { type: "image/png" });
     setNative(window.matchMedia("(pointer: coarse)").matches && !!navigator.canShare?.({ files: [probe] }));
-    const params = new URLSearchParams({ text: props.title, hashtags: "ICPCReplay", url: window.location.href });
-    setIntent(`https://twitter.com/intent/tweet?${params}`);
-  }, [props.title]);
+    setChartUrl(window.location.href);
+  }, []);
 
   async function share() {
     setBusy(true);
@@ -78,7 +80,7 @@ export default function ShareChart(props: Props) {
     try {
       const file = chartImage(props);
       if (native && navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file], text: `${props.title} #ICPCReplay\n${window.location.href}` });
+        await navigator.share({ files: [file], text: postText });
       } else {
         await navigator.clipboard.write([new ClipboardItem({ "image/png": file })]);
         setMessage("画像をコピーしました。投稿画面が開かなかった場合は「Xの投稿画面を開く」を押してください。");
@@ -119,7 +121,7 @@ export default function ShareChart(props: Props) {
         {native
           ? "共有メニューでXを選びます。投稿画面でグラフ画像と本文を確認してからポストしてください。"
           : "Xの投稿欄に画像を貼り付けます（WindowsはCtrl+V、Macは⌘V、スマホは投稿欄を長押しして「ペースト」）。画像を確認してからポストしてください。"}
-        {" "}本文には大会名・#ICPCReplay・このグラフのURLを用意しています。
+        {" "}本文には大会名・各チームの初正解以降の瞬間最高順位・#ICPCReplay・このグラフのURLを用意しています。
       </p>
       <p role="status" className="text-sm text-gray-700">{message}</p>
     </div>

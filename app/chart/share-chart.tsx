@@ -58,7 +58,7 @@ export default function ShareChart(props: Props) {
         await navigator.share({ files: [file], text: `${props.title} #ICPCReplay\n${window.location.href}` });
       } else {
         await navigator.clipboard.write([new ClipboardItem({ "image/png": file })]);
-        setMessage("画像をコピーしました。Xの投稿画面に貼り付けてください。");
+        setMessage("画像をコピーしました。投稿画面が開かなかった場合は「Xの投稿画面を開く」を押してください。");
         window.open(intent, "_blank", "noopener,noreferrer");
       }
     } catch (error) {
@@ -86,12 +86,18 @@ export default function ShareChart(props: Props) {
   return (
     <div className="mt-4 space-y-2">
       <div className="flex flex-wrap items-center gap-3">
-        <button className={buttonStyle} onClick={share} disabled={busy || !intent}>
+        <button className={buttonStyle} onClick={share} disabled={busy || !intent} aria-describedby="chart-share-help">
           {native ? "グラフ画像を共有" : "画像をコピーしてXを開く"}
         </button>
         {fallback && <button className="text-sm underline" onClick={download}>PNGを保存</button>}
         {message && <a className="text-sm underline" href={intent} target="_blank" rel="noreferrer">Xの投稿画面を開く</a>}
       </div>
+      <p id="chart-share-help" className="text-sm text-gray-700">
+        {native
+          ? "共有メニューでXを選びます。投稿画面でグラフ画像と本文を確認してからポストしてください。"
+          : "Xの投稿欄に画像を貼り付けます（WindowsはCtrl+V、Macは⌘V、スマホは投稿欄を長押しして「ペースト」）。画像を確認してからポストしてください。"}
+        {" "}本文には大会名・#ICPCReplay・このグラフのURLを用意しています。
+      </p>
       <p role="status" className="text-sm text-gray-700">{message}</p>
     </div>
   );

@@ -2,12 +2,13 @@
 "use strict";
 
 import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 import Link from "next/link";
 
 import { contest_data, json_data } from "../standings_data";
 import Header from "../header";
 import Footer from "../footer";
+import ShareChart from "./share-chart";
 
 import { Scatter } from "react-chartjs-2";
 import {
@@ -161,6 +162,7 @@ function ProblemSet({ contest, results }: { contest: string; results: { [key: st
 }
 
 function Chart({ contest, teams }: { contest: string; teams: string[] }) {
+  const chartRef = useRef<ChartJS<"scatter"> | null>(null);
   const contest_name = contest_data.find(c => c.id === contest)?.name ?? "";
 
   const datasets = teams.map((team, index) => {
@@ -288,8 +290,9 @@ function Chart({ contest, teams }: { contest: string; teams: string[] }) {
 
       <section className="bg-white border rounded-lg shadow-sm p-4">
         <div className="relative h-[60vh] min-h-[320px] max-h-[560px]">
-          <Scatter data={data} options={options} plugins={[solvedLabelPlugin]} />
+          <Scatter ref={chartRef} data={data} options={options} plugins={[solvedLabelPlugin]} />
         </div>
+        <ShareChart key={JSON.stringify([contest, ...teams])} chartRef={chartRef} contest={contest} title={contest_name} />
       </section>
 
       <section className="bg-white border rounded-lg shadow-sm overflow-x-auto">

@@ -1,5 +1,5 @@
 import { useEffect, useState, type RefObject } from "react";
-import type { Chart } from "chart.js";
+import { Chart } from "chart.js";
 
 type Props = {
   chartRef: RefObject<Chart<"scatter"> | null>;
@@ -10,25 +10,48 @@ type Props = {
 function chartImage({ chartRef, contest, title }: Props): File {
   const chart = chartRef.current;
   if (!chart) throw new Error("グラフを読み込み中です。");
-  chart.update("none");
-
   const canvas = document.createElement("canvas");
-  const scale = chart.currentDevicePixelRatio;
-  const heading = 52;
-  canvas.width = chart.canvas.width;
-  canvas.height = chart.canvas.height + Math.ceil(heading * scale);
-  const ctx = canvas.getContext("2d");
-  if (!ctx) throw new Error("画像を作成できませんでした。");
-  ctx.scale(scale, scale);
-  ctx.fillStyle = "#ffffff";
-  ctx.fillRect(0, 0, canvas.width / scale, canvas.height / scale);
-  ctx.fillStyle = "#1f2937";
-  ctx.font = "bold 22px sans-serif";
-  ctx.fillText(title, 12, 34, chart.width - 24);
-  ctx.drawImage(chart.canvas, 0, heading, chart.width, chart.height);
+  canvas.width = 1200;
+  canvas.height = 675;
 
-  // 共有メニューをクリック操作中に開けるよう、PNGを同期的に用意する。
-  const bytes = atob(canvas.toDataURL("image/png").split(",")[1]);
+  const options = chart.config.options;
+  const exported = new Chart<"scatter">(canvas, {
+    type: "scatter",
+    data: {
+      datasets: chart.data.datasets.map((dataset, index) => ({
+        ...dataset,
+        hidden: !chart.isDatasetVisible(index),
+      })),
+    },
+    options: {
+      ...options,
+      responsive: false,
+      devicePixelRatio: 1,
+      animation: false,
+      events: [],
+      plugins: {
+        ...options?.plugins,
+        title: { display: true, text: title, font: { size: 22 }, color: "#1f2937" },
+      },
+    },
+    plugins: [
+      ...(chart.config.plugins ?? []),
+      {
+        id: "exportBackground",
+        beforeDraw({ ctx, width, height }) {
+          ctx.fillStyle = "#ffffff";
+          ctx.fillRect(0, 0, width, height);
+        },
+      },
+    ],
+  });
+  let bytes: string;
+  try {
+    // 共有メニューをクリック操作中に開けるよう、PNGを同期的に用意する。
+    bytes = atob(canvas.toDataURL("image/png").split(",")[1]);
+  } finally {
+    exported.destroy();
+  }
   return new File([Uint8Array.from(bytes, c => c.charCodeAt(0))], `icpc-replay-${contest}.png`, { type: "image/png" });
 }
 
